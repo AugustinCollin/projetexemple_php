@@ -1,0 +1,14 @@
+D:\farhan\Matrice\bin\Debug\net6.0\Matrice.exe
+D:\farhan\Matrice\bin\Debug\net6.0\Matrice.deps.json
+D:\farhan\Matrice\bin\Debug\net6.0\Matrice.runtimeconfig.json
+D:\farhan\Matrice\bin\Debug\net6.0\Matrice.dll
+D:\farhan\Matrice\bin\Debug\net6.0\Matrice.pdb
+D:\farhan\Matrice\obj\Debug\net6.0\Matrice.GeneratedMSBuildEditorConfig.editorconfig
+D:\farhan\Matrice\obj\Debug\net6.0\Matrice.AssemblyInfoInputs.cache
+D:\farhan\Matrice\obj\Debug\net6.0\Matrice.AssemblyInfo.cs
+D:\farhan\Matrice\obj\Debug\net6.0\Matrice.csproj.CoreCompileInputs.cache
+D:\farhan\Matrice\obj\Debug\net6.0\Matrice.dll
+D:\farhan\Matrice\obj\Debug\net6.0\refint\Matrice.dll
+D:\farhan\Matrice\obj\Debug\net6.0\Matrice.pdb
+D:\farhan\Matrice\obj\Debug\net6.0\Matrice.genruntimeconfig.cache
+D:\farhan\Matrice\obj\Debug\net6.0\ref\Matrice.dll
