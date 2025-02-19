@@ -1,30 +1,47 @@
 <?php
-
-/*
-Fonction selectAllSchools
--------------------------
-BUT : aller rechercher ls caractéristiques de toutes les écoles dans la bas ede données
-IN : $pdo reprenant toutes les informations de connexion
-OUT : objet pdo contenant toutes les écoles de la base de données.
-*/
-
-function selectAllschools($pdo)
+function selectAllSchools($pdo)
 {
-    try
-    {
+    try {
         //définition de la requête
-        $query = "select * from school";
-        //préparation de l'exécution de la requête
+        $query = 'select * from school';
+        //préparation de l'execution de a requête
         $selectSchool = $pdo->prepare($query);
-        //exécution
+        //execution
         $selectSchool->execute();
         //récupération des données dans l'objet fetch
-        $schools = $selectSchool->fetchall();
+        $schools = $selectSchool->fetchAll();
         //renvoi des données
         return $schools;
-    } catch (PDOexception $e)
-    {
-        $message = $e->getmessage();
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
+
+function deleteAllSchoolsFromUser($pdo)
+{
+    try {
+        $query = 'delete from school where utilisateurId = :utilisateurId';
+        $deleteAllSchoolsFromId = $pdo->prepare($query);
+        $deleteAllSchoolsFromId->execute([
+            'utilisateurId' => $_SESSION['user']->id
+        ]);
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
+
+function deleteOptionsSchoolFromUser($dbh)
+{
+    try {
+        $query = 'delete from option_ecole where schoolId in (select schoolId from school where utilisateurId = :utilisateurId)';
+        $deleteAllSchoolsFromId = $dbh->prepare($query);
+        $deleteAllSchoolsFromId->execute([
+            'utilisateurId' => $_SESSION['user']->id
+        ]);
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
         die($message);
     }
 }
